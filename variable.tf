@@ -1,3 +1,19 @@
+variable "subscription_id" {
+  type = string
+}
+
+variable "client_id" {
+  type = string
+}
+
+variable "client_secret" {
+  type = string
+}
+
+variable "tenant_id" {
+  type = string
+}
+
 variable "base_name" {
   type        = string
   description = "Base Name for the groups to create (eg. project-name)"
