@@ -15,7 +15,7 @@ resource "azuread_group" "main" {
   display_name     = "${var.base_name}_${each.value.name}"
   owners           = var.owner == null ? [data.azuread_client_config.current.object_id] : var.owner
   security_enabled = true
-  provider = azurerm.rbac
+  //provider = azurerm.rbac
 }
 
 
@@ -24,5 +24,5 @@ resource "azurerm_role_assignment" "main" {
   scope                = var.assign_id
   role_definition_name = each.value.role
   principal_id         = azuread_group.main["${each.key}"].id
-  provider = azurerm.rbac
+  //provider = azurerm.rbac
 }
