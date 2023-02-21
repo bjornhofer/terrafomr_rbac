@@ -12,7 +12,7 @@ data "azuread_client_config" "current" {}
 resource "azuread_group" "main" {
   for_each         = var.user_role_map
   display_name     = "${var.base_name}_${each.value.name}"
-  owners           = var.owner == null ? [data.azuread_client_config.current.object_id] : var.owner
+  //owners           = var.owner == null ? [data.azuread_client_config.current.object_id] : var.owner
   security_enabled = true
   //provider = azurerm.rbac
 }
